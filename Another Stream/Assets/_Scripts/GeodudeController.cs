@@ -20,13 +20,13 @@ public class GeodudeController : NetworkBehaviour {
             // .3f * forward is to avoid hitting Geodude asset's visors by starting raycast after it
             Ray ray = new Ray(transform.position + (.3f * transform.forward), transform.forward);
 
-            Debug.Log("Fire!");
+            //Debug.Log("Fire!");
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit.collider.gameObject.name);
+                //Debug.Log(hit.collider.gameObject.name);
                 if (hit.collider.tag == "box")
                 {
-                    Debug.Log("Hit!");
+                    //Debug.Log("Hit!");
                     CmdChangeBox(hit.collider.gameObject);
                 }
             }
@@ -37,6 +37,6 @@ public class GeodudeController : NetworkBehaviour {
     void CmdChangeBox(GameObject hitObject)
     {
         if (hitObject.GetComponent<Collider>().tag == "box")
-            hitObject.GetComponent<BoxChanger>().RpcChangeColor();
+            hitObject.GetComponent<BoxChanger>().RpcChangeColor();  // Maybe turn this into generic function of class that implements interactableInterface
     }
 }

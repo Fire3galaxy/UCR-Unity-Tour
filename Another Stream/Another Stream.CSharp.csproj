@@ -131,13 +131,14 @@
     <Compile Include="Assets\_Scripts\BoxChanger.cs" />
     <Compile Include="Assets\_Scripts\DirectionValues.cs" />
     <Compile Include="Assets\_Scripts\GeodudeController.cs" />
+    <Compile Include="Assets\_Scripts\InteractableInterface.cs" />
     <Compile Include="Assets\_Scripts\Node.cs" />
     <Compile Include="Assets\_Scripts\PlayVideos.cs" />
     <Compile Include="Assets\_Scripts\RaycastTest.cs" />
     <Compile Include="Assets\_Scripts\ReverseMesh.cs" />
     <Compile Include="Assets\_Scripts\TimeoutTest.cs" />
-    <Compile Include="Assets\_Scripts\TransformToCamera.cs" />
     <Compile Include="Assets\_Scripts\UserPictureMechanic.cs" />
+    <Compile Include="Assets\_Scripts\UserReticle.cs" />
     <Compile Include="Assets\_Scripts\WallTrigger.cs" />
     <Compile Include="Assets\_Scripts\WallVisibilityController.cs" />
   </ItemGroup>

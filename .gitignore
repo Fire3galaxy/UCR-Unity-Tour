@@ -2,6 +2,7 @@
 Another Stream/Temp
 Another Stream/Build
 Another Stream/*.apk
+Another Stream/Assets/Plugins/iOS/libgvrunity.a
 
 # Windows image file caches
 Thumbs.db
