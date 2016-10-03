@@ -92,7 +92,6 @@ public class GvrReticle : MonoBehaviour, IGvrGazePointer {
   /// point of the ray sent from the camera on the object.
   public void OnGazeStart(Camera camera, GameObject targetObject, Vector3 intersectionPosition,
                           bool isInteractive) {
-        Debug.Log("On Gaze Start");
     SetGazeTarget(intersectionPosition, isInteractive);
   }
 

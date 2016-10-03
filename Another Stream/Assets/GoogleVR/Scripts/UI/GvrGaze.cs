@@ -143,6 +143,7 @@ public class GvrGaze : MonoBehaviour {
     // Found a target?
     if (targetObject != null) {
       lastIntersectPosition = intersectPosition;
+      //Debug.Log("In handleGaze(): " + targetObject.name); // FIXME: Me
 
       // Is the object new?
       if (targetObject != currentGazeObject) {
@@ -216,6 +217,8 @@ public class GvrGaze : MonoBehaviour {
 
     // Found anything?
     if (hitResult) {
+            //Debug.Log("In FindGazeTarget(): " + hit.collider.gameObject.name);
+
       // Set object and IGvrGazeResponder if any.
       targetObject = hit.collider.gameObject;
       responder = targetObject.GetComponent(typeof(IGvrGazeResponder))
