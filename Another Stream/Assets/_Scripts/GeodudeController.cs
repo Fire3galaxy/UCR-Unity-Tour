@@ -33,6 +33,11 @@ public class GeodudeController : NetworkBehaviour {
         }
     }
     
+    public void OnTrigger(GameObject hitObject)
+    {
+        CmdChangeBox(hitObject);
+    }
+
     [Command]   // Run by server
     void CmdChangeBox(GameObject hitObject)
     {

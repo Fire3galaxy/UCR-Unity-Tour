@@ -285,7 +285,15 @@ public class GvrGaze : MonoBehaviour {
         pointer.OnGazeTriggerEnd(cam);
       }
       if (currentTarget != null) {
-        currentTarget.OnGazeTrigger();
+                //currentTarget.OnGazeTrigger();
+                // To tell player to call server on trigger
+                GameObject player = Camera.main.GetComponent<PlayerHolder>().playerObject;
+                Debug.Log("On Trigger");
+                if (player != null)
+                {
+                    Debug.Log("Not null");
+                    player.GetComponent<GeodudeController>().OnTrigger(currentGazeObject);
+                }
       }
       isTriggered = false;
     }
