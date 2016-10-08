@@ -72,7 +72,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BoxScript.cs" />
     <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avcodec.g.cs" />
     <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avdevice.g.cs" />
     <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avfilter.g.cs" />
@@ -127,13 +126,14 @@
     <Compile Include="Assets\GoogleVR\Scripts\UI\GvrReticle.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazePointer.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazeResponder.cs" />
-    <Compile Include="Assets\VisorRaycast.cs" />
+    <Compile Include="Assets\_Scripts\AttachToCamera.cs" />
     <Compile Include="Assets\_Scripts\BoxChanger.cs" />
     <Compile Include="Assets\_Scripts\DirectionValues.cs" />
     <Compile Include="Assets\_Scripts\GeodudeController.cs" />
     <Compile Include="Assets\_Scripts\InteractableInterface.cs" />
     <Compile Include="Assets\_Scripts\Node.cs" />
     <Compile Include="Assets\_Scripts\PlayVideos.cs" />
+    <Compile Include="Assets\_Scripts\PlayerHolder.cs" />
     <Compile Include="Assets\_Scripts\RaycastTest.cs" />
     <Compile Include="Assets\_Scripts\ReverseMesh.cs" />
     <Compile Include="Assets\_Scripts\TimeoutTest.cs" />
