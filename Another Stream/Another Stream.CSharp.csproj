@@ -70,8 +70,16 @@
     <Reference Include="Google.ProtocolBuffers">
       <HintPath>Assets\Plugins\Google.ProtocolBuffers.dll</HintPath>
     </Reference>
+    <Reference Include="Photon3Unity3D">
+      <HintPath>Assets\Plugins\Photon3Unity3D.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Demo Chat\ChannelSelector.cs" />
+    <Compile Include="Assets\Demo Chat\ChatNewGui.cs" />
+    <Compile Include="Assets\Demo Chat\DeleteOnStart.cs" />
+    <Compile Include="Assets\Demo Chat\IgnoreUiRaycastWhenInactive.cs" />
+    <Compile Include="Assets\Demo Chat\NamePickNewGui.cs" />
     <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avcodec.g.cs" />
     <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avdevice.g.cs" />
     <Compile Include="Assets\EasyMovieTexture\FFmpeg.AutoGen\FFmpeg.avfilter.g.cs" />
@@ -126,6 +134,17 @@
     <Compile Include="Assets\GoogleVR\Scripts\UI\GvrReticle.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazePointer.cs" />
     <Compile Include="Assets\GoogleVR\Scripts\UI\IGvrGazeResponder.cs" />
+    <Compile Include="Assets\PhotonChat\ChatSettings.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatChannel.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatClient.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatDisconnectCause.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatEventCode.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatOperationCode.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatParameterCode.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatPeer.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatState.cs" />
+    <Compile Include="Assets\PhotonChatApi\ChatUserStatus.cs" />
+    <Compile Include="Assets\PhotonChatApi\IChatClientListener.cs" />
     <Compile Include="Assets\_Scripts\AttachToCamera.cs" />
     <Compile Include="Assets\_Scripts\BoxChanger.cs" />
     <Compile Include="Assets\_Scripts\DirectionValues.cs" />
@@ -143,6 +162,9 @@
     <Compile Include="Assets\_Scripts\WallVisibilityController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Demo Chat\Resources\BitstreamVeraSans\COPYRIGHT.TXT" />
+    <None Include="Assets\Demo Chat\Resources\BitstreamVeraSans\README.TXT" />
+    <None Include="Assets\Demo Chat\Resources\BitstreamVeraSans\RELEASENOTES.TXT" />
     <None Include="Assets\EasyMovieTexture\Chromakey.shader" />
     <None Include="Assets\EasyMovieTexture\Chromakey2.shader" />
     <None Include="Assets\EasyMovieTexture\Unlit_SphereInside.shader" />
@@ -153,6 +175,10 @@
     <None Include="Assets\GoogleVR\Legacy\Resources\UnlitTexture.shader" />
     <None Include="Assets\GoogleVR\Resources\UI\GvrReticleShader.shader" />
     <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Photon3Unity3D.xml" />
+    <None Include="Assets\Plugins\release_history.txt" />
+    <None Include="Assets\_Scenes\README.txt" />
+    <None Include="Assets\photon-chat-readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_Scenes/First Tour.unity
+- path: Assets/Demo Chat/Chat-Scene.unity
   isLoaded: 1
   isActive: 1
