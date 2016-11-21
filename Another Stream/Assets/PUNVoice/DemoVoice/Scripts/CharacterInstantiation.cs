@@ -21,11 +21,13 @@ namespace ExitGames.Demos.DemoPunVoice {
 
         public new void OnJoinedRoom() {
             if (this.PrefabsToInstantiate != null) {
-                GameObject o = PrefabsToInstantiate[(PhotonNetwork.player.ID - 1) % 4];
+                GameObject o = PrefabsToInstantiate[(PhotonNetwork.player.ID - 1) % this.PrefabsToInstantiate.Length];
                 //Debug.Log("Instantiating: " + o.name);
                 Vector3 spawnPos = Vector3.zero;
+                Quaternion spawnRot = Quaternion.identity;
                 if (this.SpawnPosition != null) {
                     spawnPos = this.SpawnPosition.position;
+                    spawnRot = this.SpawnPosition.rotation;
                 }
                 Vector3 random = Random.insideUnitSphere;
                 random = this.PositionOffset * random.normalized;
@@ -33,7 +35,7 @@ namespace ExitGames.Demos.DemoPunVoice {
                 spawnPos.y = 0;
                 Camera.main.transform.position += spawnPos;
 
-                o = PhotonNetwork.Instantiate(o.name, spawnPos, Quaternion.identity, 0);
+                o = PhotonNetwork.Instantiate(o.name, spawnPos, spawnRot, 0);
                 if (CharacterInstantiated != null) {
                     CharacterInstantiated(o);
                 }

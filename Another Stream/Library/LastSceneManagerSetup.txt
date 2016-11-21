@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Demo Chat/Chat-Scene.unity
+- path: Assets/_Scenes/Photon Voice.unity
   isLoaded: 1
   isActive: 1
