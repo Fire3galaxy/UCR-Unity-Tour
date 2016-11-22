@@ -233,6 +233,7 @@
     <Compile Include="Assets\_Scripts\BoxChanger.cs" />
     <Compile Include="Assets\_Scripts\DirectionValues.cs" />
     <Compile Include="Assets\_Scripts\Geodude scripts\GeodudePUNController.cs" />
+    <Compile Include="Assets\_Scripts\Geodude scripts\UserPicMechanic.cs" />
     <Compile Include="Assets\_Scripts\GeodudeController.cs" />
     <Compile Include="Assets\_Scripts\InteractableInterface.cs" />
     <Compile Include="Assets\_Scripts\NewBehaviourScript.cs" />
