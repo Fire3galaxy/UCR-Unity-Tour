@@ -29,9 +29,10 @@ namespace ExitGames.Demos.DemoPunVoice {
                     spawnPos = this.SpawnPosition.position;
                     spawnRot = this.SpawnPosition.rotation;
                 }
-                Vector3 random = Random.insideUnitSphere;
-                random = this.PositionOffset * random.normalized;
-                spawnPos += random;
+                //Vector3 random = Random.insideUnitSphere;
+                float random = Random.Range(5, 10);
+                random = this.PositionOffset * random;
+                spawnPos.z += random;
                 spawnPos.y = 0;
                 Camera.main.transform.position += spawnPos;
 
