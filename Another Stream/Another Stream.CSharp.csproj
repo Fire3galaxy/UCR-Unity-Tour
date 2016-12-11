@@ -236,6 +236,7 @@
     <Compile Include="Assets\_Scripts\GeodudeController.cs" />
     <Compile Include="Assets\_Scripts\InteractableInterface.cs" />
     <Compile Include="Assets\_Scripts\Node.cs" />
+    <Compile Include="Assets\_Scripts\PUN scripts\ConnectAndJoinRoom.cs" />
     <Compile Include="Assets\_Scripts\PUN scripts\InstantiateAvatar.cs" />
     <Compile Include="Assets\_Scripts\PlayVideos.cs" />
     <Compile Include="Assets\_Scripts\PlayerHolder.cs" />
