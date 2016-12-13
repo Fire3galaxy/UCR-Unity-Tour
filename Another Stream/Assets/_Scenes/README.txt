@@ -7,4 +7,4 @@ Raycasting was experimenting with multiplayer synced raycasting
 Photon Voice Scene experiments with the photon voice chat asset
 	- geodude water can voice chat with other users using pun instead of unity network
 Voice Tour combines Voice Scene and First Tour, implementing the same tour scene features with Photon's network instead
-Sync Scene Temp is a copy of Voice Tour that aims to synchronize loading a second scene between two people
+UI Screen is a scene that reads and loads Photon rooms in a lobby

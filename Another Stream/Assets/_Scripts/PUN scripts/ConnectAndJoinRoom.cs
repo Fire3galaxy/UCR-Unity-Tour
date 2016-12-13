@@ -1,9 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class ConnectAndJoinRoom : Photon.MonoBehaviour {
     public byte Version = 1;
+    public GameObject ListContent;
+    public GameObject ListItemPrefab;
+
     private bool ConnectedInUpdate = false;
+    private List<GameObject> ObjectsList = new List<GameObject>();
 
 	// Use this for initialization
 	public virtual void Start ()
@@ -22,19 +27,53 @@ public class ConnectAndJoinRoom : Photon.MonoBehaviour {
         }
     }
 
+    private void AddListItem(string s) {
+        if (ListContent != null && ListItemPrefab != null) {
+            GameObject CreatedRoom = (GameObject)Instantiate(ListItemPrefab, ListContent.transform, false);
+            ObjectsList.Add(CreatedRoom);
+            CreatedRoom.GetComponent<Text>().text = s;
+            //ListContent.text += debug;
+
+        }
+    }
+
     public virtual void OnJoinedLobby()
     {
         Debug.Log("Joined Lobby");
-        RoomInfo[] rooms = PhotonNetwork.GetRoomList();
+    }
 
+    public void OnJoinedRoom()
+    {
+        Debug.Log("In room: " + PhotonNetwork.room.name);
+
+        string debug = "Joined: " + PhotonNetwork.room.name + " "
+                + PhotonNetwork.room.playerCount + " "
+                + PhotonNetwork.room.maxPlayers;
+        AddListItem(debug);
+    }
+
+    public virtual void OnReceivedRoomListUpdate()
+    {
+        Debug.Log("Room list is available now");
+        RoomInfo[] rooms = PhotonNetwork.GetRoomList();
+        
         if (rooms.Length == 0)
-            Debug.Log("No rooms available");
+        {
+            Debug.Log("No rooms available, creating room \"Starfish\"");
+            PhotonNetwork.CreateRoom("Starfish");
+        }
         else
         {
-            for (int i = 0; i < rooms.Length; i++)
+            if (ListContent != null)
             {
-                Debug.Log(rooms[i].name);
+                foreach (RoomInfo game in rooms)
+                {
+                    string debug = "Room: " + game.name + " " + game.playerCount + " " + game.maxPlayers;
+                    AddListItem(debug);
+                    //ListContent.text += debug;
+                }
             }
+            PhotonNetwork.JoinRoom("Starfish");
         }
     }
 }
