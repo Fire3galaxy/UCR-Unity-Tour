@@ -29,9 +29,9 @@ public class ConnectAndJoinRoom : Photon.MonoBehaviour {
 
     private void AddListItem(string s) {
         if (ListContent != null && ListItemPrefab != null) {
-            GameObject CreatedRoom = (GameObject)Instantiate(ListItemPrefab, ListContent.transform, false);
-            ObjectsList.Add(CreatedRoom);
-            CreatedRoom.GetComponent<Text>().text = s;
+            GameObject listItemRoom = (GameObject)Instantiate(ListItemPrefab, ListContent.transform, false);
+            ObjectsList.Add(listItemRoom);
+            listItemRoom.GetComponentInChildren<Text>().text = s;
             //ListContent.text += debug;
 
         }
