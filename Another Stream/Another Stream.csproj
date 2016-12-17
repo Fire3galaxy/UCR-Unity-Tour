@@ -244,6 +244,10 @@
     <Compile Include="Assets\_Scripts\ReverseMesh.cs" />
     <Compile Include="Assets\_Scripts\Scene scripts\ChangeScene.cs" />
     <Compile Include="Assets\_Scripts\TimeoutTest.cs" />
+    <Compile Include="Assets\_Scripts\UI scripts\CreateRoomResponder.cs" />
+    <Compile Include="Assets\_Scripts\UI scripts\JoinRoomResponder.cs" />
+    <Compile Include="Assets\_Scripts\UI scripts\QuitApplication.cs" />
+    <Compile Include="Assets\_Scripts\UI scripts\SubmitRoomResponder.cs" />
     <Compile Include="Assets\_Scripts\UserPictureMechanic.cs" />
     <Compile Include="Assets\_Scripts\UserReticle.cs" />
     <Compile Include="Assets\_Scripts\WallTrigger.cs" />

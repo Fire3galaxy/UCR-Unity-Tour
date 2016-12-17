@@ -1,2 +1,22 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=1613 outsize=975 ok=1
+Cmd: preprocess
+  insize=392 outsize=392 ok=1
+Cmd: preprocess
+  insize=2009 outsize=1250 ok=1
+Cmd: preprocess
+  insize=839 outsize=836 ok=1
+Cmd: preprocess
+  insize=1364 outsize=671 ok=1
+Cmd: preprocess
+  insize=1707 outsize=655 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=992 outsize=482 kw= pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF2 UNITY_HARDWARE_TIER3 ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=992 outsize=722 kw= pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF2 UNITY_HARDWARE_TIER3 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=980 outsize=522 kw= pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF2 UNITY_HARDWARE_TIER3 ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=980 outsize=298 kw= pd=UNITY_NO_SCREENSPACE_SHADOWS UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF2 UNITY_HARDWARE_TIER3 ok=1
