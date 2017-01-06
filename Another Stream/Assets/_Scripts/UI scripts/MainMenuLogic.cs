@@ -2,7 +2,9 @@
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class ConnectAndJoinRoom : Photon.MonoBehaviour {
+public class MainMenuLogic : Photon.MonoBehaviour {
+    enum States { HomeScreen, CreateRoomScreen, JoinRoomScreen, EnterRoomScreen, TourScreen };
+
     private const string QUIT = "Quit"; // Quit button strings
     private const string BACK = "Back";
 
@@ -20,12 +22,14 @@ public class ConnectAndJoinRoom : Photon.MonoBehaviour {
     // Different User Screens
     public GameObject HomeScreen;
     public GameObject CreateRoomScreen;
+    public GameObject EnterRoomScreen;
 
     public GameObject ListContent;
     public GameObject ListButtonPrefab;
 
     private bool ConnectedInUpdate = false;
-    private bool IsInHomeScreen = true;
+    private States GameState = States.HomeScreen;
+    private bool CreatingRoom = false;
     private List<GameObject> ObjectsList = new List<GameObject>();
 
 	// Use this for initialization
@@ -52,6 +56,21 @@ public class ConnectAndJoinRoom : Photon.MonoBehaviour {
         HomeScreen.SetActive(true);
     }
 
+    public virtual void OnFailedToConnectToPhoton(DisconnectCause cause) {
+        Debug.LogError("OnFailedToConnectToPhoton(): " + cause.ToString());
+    }
+
+    public virtual void OnJoinedRoom() {
+        if (CreatingRoom) {
+            LoadingImage.sprite = LoadedSprite;
+            EnterRoomScreen.GetComponentInChildren<Text>().text = "Room created!\n<size=40>"
+                + PhotonNetwork.room.name + "</size>";
+            EnterRoomScreen.GetComponentInChildren<Button>(true).gameObject.SetActive(true);
+
+            CreatingRoom = false;
+        }
+    }
+    
     //public void OnJoinedRoom()
     //{
     //    Debug.Log("In room: " + PhotonNetwork.room.name);
@@ -66,7 +85,7 @@ public class ConnectAndJoinRoom : Photon.MonoBehaviour {
     //{
     //    Debug.Log("Room list is available now");
     //    RoomInfo[] rooms = PhotonNetwork.GetRoomList();
-        
+
     //    if (rooms.Length == 0)
     //    {
     //        Debug.Log("No rooms available, creating room \"Starfish\"");
@@ -91,12 +110,31 @@ public class ConnectAndJoinRoom : Photon.MonoBehaviour {
     //        //PhotonNetwork.JoinRoom("Starfish");
     //    }
     //}
-    
+
     public void OnClickQuit() {
-        if (IsInHomeScreen)
-            QuitApplication.Quit();
-        else
-            OnClickSubmitRoom();    // FIXME: replace with enum
+        switch (GameState) {
+            case States.HomeScreen:
+                QuitApplication.Quit();
+                break;
+            default:
+                BackToHomeScreen();
+                break;
+        }
+    }
+
+    public void BackToHomeScreen() {
+        // Add home page and loading screen
+        HomeScreen.SetActive(true);
+        LoadingImage.gameObject.SetActive(true);
+        LoadingText.gameObject.SetActive(true);
+
+        // Remove anything else
+        CreateRoomScreen.SetActive(false);
+        EnterRoomScreen.SetActive(false);
+
+        // Update state
+        GameState = States.HomeScreen;
+        QuitButtonText.text = QUIT;
     }
 
     public void OnClickCreateRoom() {
@@ -108,25 +146,43 @@ public class ConnectAndJoinRoom : Photon.MonoBehaviour {
         // Add in create room menu
         CreateRoomScreen.SetActive(true);
 
-        // Update this bool
-        IsInHomeScreen = false;
+        // Update state
+        GameState = States.CreateRoomScreen;
         QuitButtonText.text = BACK;
     }
 
     public void OnClickSubmitRoom() {
-        // Remove home page and loading screen
-        HomeScreen.SetActive(true);
+        // Views in CreateRoomScreen
+        InputField roomInputField = CreateRoomScreen.GetComponentInChildren<InputField>();
+        GameObject createRoomText = CreateRoomScreen.GetComponentInChildren<Text>().gameObject;
+        GameObject submitRoomButton = CreateRoomScreen.GetComponentInChildren<Button>().gameObject;
+        Text enterRoomText = EnterRoomScreen.GetComponentInChildren<Text>();
+
+        // Change game state
+        roomInputField.gameObject.SetActive(false); // Create Room Screen state
+        createRoomText.SetActive(false);
+        submitRoomButton.SetActive(false);
+
+        GameState = States.EnterRoomScreen;         // Enter Room Screen state
+        LoadingImage.sprite = NotLoadedSprite;
         LoadingImage.gameObject.SetActive(true);
-        LoadingText.gameObject.SetActive(true);
+        EnterRoomScreen.SetActive(true);
 
-        // Add in create room menu
-        CreateRoomScreen.SetActive(false);
-
-        // Update Quit button
-        IsInHomeScreen = true;
-        QuitButtonText.text = QUIT;
+        // Create room with name given by user
+        CreatingRoom = true;
+        string roomName = roomInputField.text;
+        enterRoomText.text = "Creating room:\n<size=40>" + roomName + "</size>";
+        PhotonNetwork.CreateRoom(roomName);
     }
-    
+
+    public void OnClickJoinRoom() {
+        Debug.Log("Clicked Join Room");
+    }
+
+    public void OnClickToRoom() {
+        Debug.Log("To the room now!");
+        GetComponent<TourLogic>().ChangeCamera();
+    }
 
     private void AddListItem(string s) {
         if (ListContent != null && ListButtonPrefab != null) {

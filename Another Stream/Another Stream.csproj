@@ -236,7 +236,6 @@
     <Compile Include="Assets\_Scripts\GeodudeController.cs" />
     <Compile Include="Assets\_Scripts\InteractableInterface.cs" />
     <Compile Include="Assets\_Scripts\Node.cs" />
-    <Compile Include="Assets\_Scripts\PUN scripts\ConnectAndJoinRoom.cs" />
     <Compile Include="Assets\_Scripts\PUN scripts\InstantiateAvatar.cs" />
     <Compile Include="Assets\_Scripts\PlayVideos.cs" />
     <Compile Include="Assets\_Scripts\PlayerHolder.cs" />
@@ -244,10 +243,9 @@
     <Compile Include="Assets\_Scripts\ReverseMesh.cs" />
     <Compile Include="Assets\_Scripts\Scene scripts\ChangeScene.cs" />
     <Compile Include="Assets\_Scripts\TimeoutTest.cs" />
-    <Compile Include="Assets\_Scripts\UI scripts\CreateRoomResponder.cs" />
-    <Compile Include="Assets\_Scripts\UI scripts\JoinRoomResponder.cs" />
+    <Compile Include="Assets\_Scripts\UI scripts\MainMenuLogic.cs" />
     <Compile Include="Assets\_Scripts\UI scripts\QuitApplication.cs" />
-    <Compile Include="Assets\_Scripts\UI scripts\SubmitRoomResponder.cs" />
+    <Compile Include="Assets\_Scripts\UI scripts\TourLogic.cs" />
     <Compile Include="Assets\_Scripts\UserPictureMechanic.cs" />
     <Compile Include="Assets\_Scripts\UserReticle.cs" />
     <Compile Include="Assets\_Scripts\WallTrigger.cs" />
