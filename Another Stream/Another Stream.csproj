@@ -245,6 +245,7 @@
     <Compile Include="Assets\_Scripts\TimeoutTest.cs" />
     <Compile Include="Assets\_Scripts\UI scripts\MainMenuLogic.cs" />
     <Compile Include="Assets\_Scripts\UI scripts\QuitApplication.cs" />
+    <Compile Include="Assets\_Scripts\UI scripts\RoomNameHolder.cs" />
     <Compile Include="Assets\_Scripts\UI scripts\TourLogic.cs" />
     <Compile Include="Assets\_Scripts\UserPictureMechanic.cs" />
     <Compile Include="Assets\_Scripts\UserReticle.cs" />

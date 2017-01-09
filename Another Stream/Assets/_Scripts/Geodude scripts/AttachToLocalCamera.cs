@@ -5,7 +5,7 @@ public class AttachToLocalCamera : Photon.MonoBehaviour
 {
     void Update()
     {
-        if (PhotonNetwork.masterClient.isLocal)
+        if (photonView.isMine)
             transform.rotation = Camera.main.GetComponent<Transform>().rotation;
     }
 }
